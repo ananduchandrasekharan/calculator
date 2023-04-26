@@ -23,8 +23,8 @@
         <div class="calc-btn" id="btn1">
 
                                                                
-          <button class="calc-btn-primary btn-primary btn-bg-equal" id="AC" onclick="allclr()"   onmousedown="bleep.play()">AC</button>
-          <button class="calc-btn-primary" id="ON" onclick="dis(); vibr()"onmousedown="bleep.play()"">ON</button>
+          <button class="calc-btn-primary btn-primary btn-bg-equal" id="AC" onclick="allclr()"   onmousedown="bleep.play()" >AC</button>
+          <button class="calc-btn-primary" id="ON" onclick="on(); vibr()"onmousedown="bleep.play()"">OFF</button>
           <button class="calc-btn-primary btn-bg" id="seven" onclick="display('**'); vibr()" onmousedown="bleep.play()">&#8743;</button>
           <button class="calc-btn-primary btn-bg" id="seven" onclick="clr(); vibr()" onmousedown="bleep.play()">&#8592;</button>
 
@@ -49,7 +49,9 @@
           <button class="calc-btn-primary btn-bg-equal" id="equals" onclick="equal(); vibr()" onmousedown="bleep.play()">=</button>
           <button class="calc-btn-primary btn-bg" id="subtract" onclick="display('-'); vibr()" onmousedown="bleep.play()">-</button>
           <!-- <button class="calc-btn-clear" id="clear" onclick="clr()">clear</button> -->
+        
         </div>
+
       </div>
 
 
@@ -99,9 +101,18 @@ function clr() {
   
 }
 
-function dis() {
-  document.getElementById("whole").style.color="red";
+function on() {
+
   
+  if(document.getElementById("result1").style.display=='block' ){
+    document.getElementById("result1").style.display='none';
+    document.getElementById("ON").innerHTML='ON'
+  }
+  else{
+    document.getElementById("result1").style.display='block';
+    document.getElementById("ON").innerHTML='OFF'
+  
+  }
 }
 </script>
 
@@ -117,8 +128,8 @@ button:hover{
   color: #fff;
   text-shadow:
       0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
+      /* 0 0 10px #fff, */
+      /* 0 0 21px #fff, */
       0 0 42px #0fa,
       0 0 82px #0fa,
       0 0 92px #0fa,
@@ -270,9 +281,15 @@ input{
   border: 3px solid #ff7555;
   border-radius: 10px;
 }
-.calc-btn-clear:active {
-  transform: scale(0.9);
+
+button{
+ 
+  -webkit-tap-highlight-color: transparent;
+  
 }
+/* .calc-btn-clear:active {
+  transform: scale(0.9);
+} */
 
 
 @media all and (min-width:414px) and (max-width:480px){
@@ -307,6 +324,11 @@ input{
 
 }
 
-      </style>
+
+@media all and (min-width:375px) and (max-width:400px){
+
+}
+
+      </>
 </body>
 </html>
