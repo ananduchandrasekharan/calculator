@@ -23,31 +23,31 @@
         <div class="calc-btn" id="btn1">
 
                                                                
-          <button class="calc-btn-primary btn-primary btn-bg-equal" id="AC" onclick="allclr()"   onmousedown="bleep.play()" >AC</button>
-          <button class="calc-btn-primary" id="ON" onclick="on(); vibr()"onmousedown="bleep.play()">ON</button>
-          <button class="calc-btn-primary btn-bg" id="seven" onclick="display('**'); vibr()" onmousedown="bleep.play()">&#8743;</button>
-          <button class="calc-btn-primary btn-bg" id="seven" onclick="clr(); vibr()" onmousedown="bleep.play()">&#8592;</button>
+          <button class="calc-btn-primary btn-primary btn-bg-equal" id="1" onclick="allclr()"   onmousedown="bleep.play()" onmouseup="stopaudio()">AC</button>
+          <button class="calc-btn-primary" id="ON" onclick="on(); vibr()"onmousedown="bleep.play()">s/w</button>
+          <button class="calc-btn-primary btn-bg" id="2" onclick="display('**'); vibr()" onmousedown="bleep.play()">&#8743;</button>
+          <button class="calc-btn-primary btn-bg" id="3" onclick="clr(); vibr()" onmousedown="bleep.play()">&#8592;</button>
 
 
 
 
 
-          <button class="calc-btn-primary" id="seven" onclick="display(7)"onmousedown="bleep.play()">7</button>
-          <button class="calc-btn-primary" id="eight" onclick="display(8)"onmousedown="bleep.play()">8</button>
-          <button class="calc-btn-primary" id="nine" onclick="display(9)"onmousedown="bleep.play()">9</button>
-          <button class="calc-btn-primary btn-bg" id="divide" onclick="display('/'); vibr()" onmousedown="bleep.play()">&#247</button>
-          <button class="calc-btn-primary" id="four" onclick="display(4)" onmousedown="bleep.play()">4</button>
-          <button class="calc-btn-primary" id="five"onclick="display(5)" onmousedown="bleep.play()">5</button>
-          <button class="calc-btn-primary" id="six" onclick="display(6)" onmousedown="bleep.play()">6</button>
-          <button class="calc-btn-primary btn-bg" id="multiply" onclick="display('*'); vibr()" onmousedown="bleep.play()">x</button>
-          <button class="calc-btn-primary" id="one" onclick="display(1)" onmousedown="bleep.play()">1</button>
-          <button class="calc-btn-primary" id="two"onclick="display(2)" onmousedown="bleep.play()">2</button>
-          <button class="calc-btn-primary" id="three"  onclick="display(3)" onmousedown="bleep.play()">3</button>
-          <button class="calc-btn-primary btn-bg" id="add" onclick="display('+'); vibr()" onmousedown="bleep.play()">+</button>
-          <button class="calc-btn-primary btn-bg" id="decimal" onclick="display('.'); vibr()" onmousedown="bleep.play()">.</button>
-          <button class="calc-btn-primary" id="zero" onclick="display(0)" onmousedown="bleep.play()">0</button>
-          <button class="calc-btn-primary btn-bg-equal" id="equals" onclick="equal(); vibr()" onmousedown="bleep.play()">=</button>
-          <button class="calc-btn-primary btn-bg" id="subtract" onclick="display('-'); vibr()" onmousedown="bleep.play()">-</button>
+          <button class="calc-btn-primary" id="4" onclick="display(7)"onmousedown="bleep.play()">7</button>
+          <button class="calc-btn-primary" id="5" onclick="display(8)"onmousedown="bleep.play()">8</button>
+          <button class="calc-btn-primary" id="6" onclick="display(9)"onmousedown="bleep.play()">9</button>
+          <button class="calc-btn-primary btn-bg" id="7" onclick="display('/'); vibr()" onmousedown="bleep.play()">&#247</button>
+          <button class="calc-btn-primary" id="8" onclick="display(4)" onmousedown="bleep.play()">4</button>
+          <button class="calc-btn-primary" id="9"onclick="display(5)" onmousedown="bleep.play()">5</button>
+          <button class="calc-btn-primary" id="10" onclick="display(6)" onmousedown="bleep.play()">6</button>
+          <button class="calc-btn-primary btn-bg" id="11" onclick="display('*'); vibr()" onmousedown="bleep.play()">x</button>
+          <button class="calc-btn-primary" id="12" onclick="display(1)" onmousedown="bleep.play()">1</button>
+          <button class="calc-btn-primary" id="13"onclick="display(2)" onmousedown="bleep.play()">2</button>
+          <button class="calc-btn-primary" id="14"  onclick="display(3)" onmousedown="bleep.play()">3</button>
+          <button class="calc-btn-primary btn-bg" id="15" onclick="display('+'); vibr()" onmousedown="bleep.play()">+</button>
+          <button class="calc-btn-primary btn-bg" id="16" onclick="display('.'); vibr()" onmousedown="bleep.play()">.</button>
+          <button class="calc-btn-primary" id="17" onclick="display(0)" onmousedown="bleep.play()">0</button>
+          <button class="calc-btn-primary btn-bg-equal" id="18" onclick="equal(); vibr()" onmousedown="bleep.play()">=</button>
+          <button class="calc-btn-primary btn-bg" id="19" onclick="display('-'); vibr()" onmousedown="bleep.play()">-</button>
           <!-- <button class="calc-btn-clear" id="clear" onclick="clr()">clear</button> -->
         
         </div>
@@ -59,6 +59,13 @@
 <script>
       var bleep = new Audio();
       bleep.src = 'click.mp3';
+
+      function stopaudio() {
+        var a = new Audio();
+      a.src = 'click.mp3';
+			a.pause();
+			a.currentTime = 0;
+		}
 
       function gl() {
 
@@ -104,17 +111,59 @@ function clr() {
 function on() {
 
   
-  if(document.getElementById("result1").style.display=='block' ){
+  if(document.getElementById("result1").style.display=='block'  ){
     document.getElementById("result1").style.display='none';
     document.getElementById("ON").innerHTML='ON'
     document.getElementById("ON").style.backgroundColor="#fff"
     document.getElementById("ON").style.color="black"
+    
+    document.getElementById("1").style.display='none'
+    document.getElementById("2").style.display='none'
+    document.getElementById("3").style.display='none'
+    document.getElementById("4").style.display='none'
+    document.getElementById("5").style.display='none'
+    document.getElementById("6").style.display='none'
+    document.getElementById("7").style.display='none'
+    document.getElementById("8").style.display='none'
+    document.getElementById("9").style.display='none'
+    document.getElementById("10").style.display='none'
+    document.getElementById("11").style.display='none'
+    document.getElementById("12").style.display='none'
+    document.getElementById("13").style.display='none'
+    document.getElementById("14").style.display='none'
+    document.getElementById("15").style.display='none'
+    document.getElementById("16").style.display='none'
+    document.getElementById("17").style.display='none'
+    document.getElementById("18").style.display='none'
+  
+    document.getElementById("19").style.display='none'
   }
   else{
     document.getElementById("result1").style.display='block';
     document.getElementById("ON").innerHTML="OF";
     document.getElementById("ON").style.backgroundColor="#ff00008c";
     document.getElementById("ON").style.color="#fff"
+
+    document.getElementById("1").style.display='block'
+    document.getElementById("2").style.display='block'
+    document.getElementById("3").style.display='block'
+    document.getElementById("4").style.display='block'
+    document.getElementById("5").style.display='block'
+    document.getElementById("6").style.display='block'
+    document.getElementById("7").style.display='block'
+    document.getElementById("8").style.display='block'
+    document.getElementById("9").style.display='block'
+    document.getElementById("10").style.display='block'
+    document.getElementById("11").style.display='block'
+    document.getElementById("12").style.display='block'
+    document.getElementById("13").style.display='block'
+    document.getElementById("14").style.display='block'
+    document.getElementById("15").style.display='block'
+    document.getElementById("16").style.display='block'
+    document.getElementById("17").style.display='block'
+    document.getElementById("18").style.display='block'
+  
+    document.getElementById("19").style.display='block'
     // document.getElementById("ON").innerHTML.style.color="red"
   
   }
@@ -125,10 +174,20 @@ function on() {
       <style>
 
 
-
-#result1{
-display: none;
+#but{
+  display: none;
 }
+
+#1{
+  display: none;
+}
+
+
+
+
+/* #result1{
+display: none;
+} */
 
 
 button:hover{
