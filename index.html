@@ -24,7 +24,7 @@
 
                                                                
           <button class="calc-btn-primary btn-primary btn-bg-equal" id="AC" onclick="allclr()"   onmousedown="bleep.play()" >AC</button>
-          <button class="calc-btn-primary" id="ON" onclick="on(); vibr()"onmousedown="bleep.play()"">OFF</button>
+          <button class="calc-btn-primary" id="ON" onclick="on(); vibr()"onmousedown="bleep.play()">ON</button>
           <button class="calc-btn-primary btn-bg" id="seven" onclick="display('**'); vibr()" onmousedown="bleep.play()">&#8743;</button>
           <button class="calc-btn-primary btn-bg" id="seven" onclick="clr(); vibr()" onmousedown="bleep.play()">&#8592;</button>
 
@@ -107,10 +107,14 @@ function on() {
   if(document.getElementById("result1").style.display=='block' ){
     document.getElementById("result1").style.display='none';
     document.getElementById("ON").innerHTML='ON'
+    document.getElementById("ON").style.backgroundColor="#fff"
+    document.getElementById("ON").style.color="black"
   }
   else{
     document.getElementById("result1").style.display='block';
-    // document.getElementById("ON").innerHTML="off";
+    document.getElementById("ON").innerHTML="OF";
+    document.getElementById("ON").style.backgroundColor="#ff00008c";
+    document.getElementById("ON").style.color="#fff"
     // document.getElementById("ON").innerHTML.style.color="red"
   
   }
@@ -122,7 +126,9 @@ function on() {
 
 
 
-
+#result1{
+display: none;
+}
 
 
 button:hover{
@@ -147,6 +153,10 @@ button:hover{
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   background-color: #ebedef;
+
+  /* background-color: #00e71fcc; */
+  /* background-color: #ff00008c; */
+
   padding: 0;
   margin: 0;
 
@@ -330,6 +340,6 @@ button{
 
 }
 
-      </>
+      </style>
 </body>
 </html>
