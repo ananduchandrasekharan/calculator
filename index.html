@@ -146,7 +146,7 @@ function on() {
   }
   else{
     document.getElementById("result1").style.display='block';
-    document.getElementById("ON").innerHTML="off";
+    document.getElementById("ON").innerHTML="off";    
     document.getElementById("ON").style.backgroundColor="#ff00008c";
     document.getElementById("ON").style.color="#fff"
 
@@ -171,6 +171,7 @@ function on() {
   
     document.getElementById("19").style.display='block'
     // document.getElementById("ON").innerHTML.style.color="red"
+    result1.value=" "
   
   }
 }
@@ -383,7 +384,7 @@ button{
   display: flex;
   flex-direction : column;
   width: 350px;
-  height: 600px;
+  height: 200px;
   margin: 10px;
   margin-bottom: 70px;
   padding-top: 50px;
@@ -401,7 +402,42 @@ button{
 }
 
 
-@media all and (min-width:375px) and (max-width:400px){
+
+
+@media all and (min-width:414px) and (max-width:900px){
+  body{
+     background-color: #080636;
+  background-image: linear-gradient(315deg, #080636cf 0%, #414141 104%);
+  }
+  button{
+    color: pink;
+  }
+
+
+
+  .calc {
+  display: flex;
+  flex-direction : column;
+  width: 350px;
+  height: 200px;
+  margin: 10px;
+  margin-bottom: 70px;
+  padding-top: 50px;
+  
+  padding-bottom: 30px;
+  margin-right: 110px;
+  background-color: #080636;
+  background-image: linear-gradient(315deg, #080636 0%, #414141 104%);
+  border-radius: 20px;
+  box-shadow : 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding-left: 10px;
+}
+
+
+}
+
+
+                            @media all and (min-width:375px) and (max-width:400px){
 
   .calc {
   display: flex;
